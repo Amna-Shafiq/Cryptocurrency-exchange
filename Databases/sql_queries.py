@@ -1,20 +1,5 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser
+
 from django.db.models import Sum, Count, Q
-
-class User(AbstractUser):
-    country = models.CharField(max_length=50)
-    def __str__(self):
-        return self.username
-
-class Transaction(models.Model):
-    quote_currency = models.CharField(max_length=10)
-    usd_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.quote_currency} {self.usd_amount} for user {self.user.username}"
-
 def get_top_spending_customers(limit=3):
   results = Transaction.objects.values('user__email', 'user__country') \
                              .annotate(total_spent=Sum('usd_amount')) \
