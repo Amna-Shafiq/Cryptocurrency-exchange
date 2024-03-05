@@ -22,10 +22,10 @@ def get_top_spending_customers(limit=3):
   return list(results)
 
 def get_user_count_by_spending_range(min_amount=1000, max_amount=2000):
-  return Transaction.objects.values('user_id') \
-                         .annotate(total_spent=Sum('usd_amount')) \
-                         .filter(Q(total_spent__gt=min_amount), Q(total_spent__lt=max_amount)) \
-                         .count()
+    return Transaction.objects.filter(
+        total_spent__gt=min_amount,
+        total_spent__lt=max_amount
+    ).values('user_id').distinct().count()
 
 def get_countries_with_low_avg_spending(threshold=500):
   results = Transaction.objects.values('user__country') \

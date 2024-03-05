@@ -1,17 +1,18 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .services.fetch_order_books_service import ExchangeAPIService
+from .services.fetch_iterate_order_books_service import ExchangeAPIService
 
 @api_view(['GET'])
 def exchange_rate(request):
     try:
         amount = float(request.GET.get('amount', 0))
     except ValueError:
-        return Response({'error': 'Invalid amount provided'}, status=400)
-
-    if amount <= 0:
-        return Response({'error': 'Amount must be greater than zero'}, status=400)
-
+        return Response({'error': 'Invalid amount provided.Please provide a valid numeric amount'}, status=400)
+    if amount < 0:
+        return Response({'error': 'Amount must be greater than or equal to zero'}, status=400)
+    if amount == 0:
+        return Response({'message': 'No operation performed as amount is zero or invalid'}, status=200) 
+        # incase user has not given the query string ?amount, by default I have assumed amount is 0 and will get this message as response
     service = ExchangeAPIService()
 
     try:
