@@ -1,6 +1,6 @@
 # SafePay Project
 
-This project aims to provide exchange rate information for Bitcoin and Coinbase exchanges using public APIs.
+This project aims to provide exchange rate information for Binance and Coinbase exchanges using public APIs.
 
 ## Getting Started
 
@@ -58,4 +58,4 @@ Example:
 http://127.0.0.1:8000/exchange-routing/?amount=1
 
 ## Service Details 
-The service to hit APIs and find the lowest price is implemented inside the services folder. This service interacts with the public APIs of Bitcoin and Coinbase exchanges using the requests library in Python.
+The service to hit APIs and find the lowest price is implemented inside the services folder. This service interacts with the public APIs of Binance and Coinbase exchanges using the requests library in Python.
