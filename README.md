@@ -1,38 +1,60 @@
-#SafePay Project#
+# SafePay Project
 
 This project aims to provide exchange rate information for Bitcoin and Coinbase exchanges using public APIs.
 
-##Getting Started##
+## Getting Started
+
 Follow these instructions to set up and run the project locally on your machine.
 
-###Prerequisites###
-Python 3.x
-Pip
-###Installation###
-Clone the repository:
-git clone <repository-url>
+### Prerequisites
 
-###Navigate to the project directory:###
-cd SafePay\Backend\safepayproject
+- Python 3.x
+- Pip
 
-###Install the required packages:###
-pip install -r requirements.txt
-Running the Project
+### Installation
 
-###Start the Django development server:###
-python manage.py runserver
-Access the project in your web browser at http://127.0.0.1:8000/.
+1. Clone the repository:
 
-##Running Tests##
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd SafePay\Backend\safepayproject
+    ```
+
+3. Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Running the Project
+
+1. Start the Django development server:
+
+    ```bash
+    python manage.py runserver
+    ```
+
+2. Access the project in your web browser at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+## Running Tests
+
 To run the test suite, execute the following command:
+
+```bash
 python manage.py test CryptocurrencyExchange.tests
 
-##Usage##
+
+## Usage
 Access the exchange rate API endpoint at /exchange-routing/ with the amount parameter specifying the amount in USD.
 
 Example:
 
 http://127.0.0.1:8000/exchange-routing/?amount=1
 
-##Service Details##
+## Service Details 
 The service to hit APIs and find the lowest price is implemented inside the services folder. This service interacts with the public APIs of Bitcoin and Coinbase exchanges using the requests library in Python.
