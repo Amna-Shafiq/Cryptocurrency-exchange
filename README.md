@@ -39,7 +39,7 @@ Follow these instructions to set up and run the project locally on your machine.
     python manage.py runserver
     ```
 
-2. Access the project in your web browser at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+2. Access the project in your web browser at [http://127.0.0.1:8000/exchange-routing/?amount=1](http://127.0.0.1:8000/exchange-routing/?amount=1).
 
 ## Running Tests
 
@@ -47,6 +47,7 @@ To run the test suite, execute the following command:
 
 ```bash
 python manage.py test CryptocurrencyExchange.tests
+ ```
 
 
 ## Usage
