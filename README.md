@@ -1,6 +1,6 @@
 # SafePay Project
 
-This project aims to provide exchange rate information for Binance and Coinbase exchanges using public APIs.
+This project aims to provide exchange rate information for Binance, Coinbase and bitfinex (bonus)exchanges using public APIs.
 
 ## Getting Started
 
